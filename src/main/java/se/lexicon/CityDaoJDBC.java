@@ -91,7 +91,38 @@ public class CityDaoJDBC implements CityDao {
 
     @Override
     public String findByName(String name) {
-        return name;
+        try (
+                Connection connection = MySQLConnection.getConnection();
+
+                PreparedStatement preparedStatement = connection.prepareStatement("select * from City where code = ?");
+        ) {
+
+            String inputName = "Amsterdam";
+            preparedStatement.setString(1, inputName);
+
+            try (
+
+                    ResultSet resultSet = preparedStatement.executeQuery();
+
+            ) {
+
+                city city = null;
+                if (resultSet.next()) {
+                    int CityId = resultSet.getInt(1);
+                    String countryCode = resultSet.getString(1);
+                    String District = resultSet.getString(1);
+                    int Population = resultSet.getInt(1);
+                    city city1 = new city(CityId, name, countryCode, District, Population);
+                }
+                System.out.println(city);
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+
     }
 
     @Override
