@@ -4,17 +4,17 @@ import java.util.List;
 
 public interface CityDao {
 
-    City findById(int id);
+    city findById(int id);
 
-    List<City> findByCode(String code);
+    String findByCode(String code);
 
-    List<City> findByName(String name);
+    String findByName(String name);
 
-    List<City> findAll();
+    List<city> findAll();
 
-    City add(City city);
+    city add(city city);
 
-    int delete(City city);
+    int delete(city city);
 
 }
 

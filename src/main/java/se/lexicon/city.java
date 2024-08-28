@@ -1,6 +1,6 @@
 package se.lexicon;
 
-public class City {
+public class city {
 
     private int ID;
     private String name;
@@ -8,14 +8,14 @@ public class City {
     private String District;
     private int population;
 
-    public City(String name, String countryCode, String district, int population) {
+    public city(String name, String countryCode, String district, int population) {
         this.name = name;
         this.countryCode = countryCode;
         District = district;
         this.population = population;
     }
 
-    public City(int ID, String name, String countryCode, String district, int population) {
+    public city(int ID, String name, String countryCode, String district, int population) {
         this.ID = ID;
         this.name = name;
         this.countryCode = countryCode;
